@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+</head>
+<body>
+    <script>
+        let product={
+            company: 'Levis',
+            price: '1000',
+            item_name: 'T-shirt',
+            'item-material': 'Cotton',
+        };
+        console.log(typeof product);
+        console.log(product);
+        console.log(product.company);
+        console.log(product.price);
+        product.company ='H&M';
+        console.log(product);
+        console.log(product['item_name']);
+        console.log(product['item-material']);
+        let propertyName='item_name';
+        console.log(product[propertyName]);
+        console.log(product.propertyName); //undefined as it is searching as propertyName as key value
+
+        delete product.company; //deletes company name
+        console.log(product);
+
+
+        //nested objects
+    let material={
+	            company: 'Levis',
+	            itemName: 'Cotton striped t-shirt',
+	            price: 1500,
+	            rating: {
+	                 stars: 4.5,
+	                 noOfReviews:  87,
+	            },
+	          displayPrice:  function(){
+                console.log(`Price of the product is ₹ ${this.price}`)
+	          }
+	       };
+           material.displayPrice();
+           console.log(material);
+
+           //Autoboxing
+
+           console.log('Hello! This is Sweta Jha'.toUpperCase());
+           console.log('Hello! This is Sweta Jha'.replace('Sweta', 'Pooja'));
+
+
+           // Object references
+           let a =5;
+           let b=a;
+           console.log(`a= ${a}, b= ${b}`);  // 5,5
+           a=8;
+           console.log(`a= ${a}, b= ${b}`);  // 8,5
+
+           let x= {num: 5};
+           let y=x;
+           console.log(`x= ${x.num}, y= ${y.num}`); //5,5
+           x.num=8;
+           console.log(`x= ${x.num}, y= ${y.num}`); //8,8
+
+           let p ={pop:'sweta'};
+           let q ={pop:'sweta'};
+           console.log(p==q);  //false
+           console.log(p===q);  //false
+
+           //object shorthand
+
+            let Goods={
+              brand: 'Levis',
+              itemName: 'Cotton t-shirt',
+              amount: 850,
+              service: 'by Amazon India'
+         };
+         //let brand = Goods.company
+         // is same as
+         let { service} = Goods;
+         let { brand, amount } = Goods;  //destructure
+         console.log(service);
+         console.log(brand,amount);
+         console.log(amount);
+
+         //property shorthand
+         let cost =1800;
+          let manufacturingProduct={ 
+                       manuufacturer: 'Levis',
+                       itemName: 'Cotton striped Top',
+                       cost,
+                       displayCost(){
+                                 return ` Rs ${this.cost}`}
+                    };
+                    console.log(manufacturingProduct.displayCost());
+
+    </script>
+</body>
+</html>

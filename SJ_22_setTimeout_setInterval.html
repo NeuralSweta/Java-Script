@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let alarm = function(){
+            console.log('Subah ho gyi mamu....wakeup!...wakeup!')
+        }
+        setTimeout(alarm,2000); //pass alarm argument and call
+        console.log('Alarm is set');
+
+
+        //--can be written as----
+        setTimeout(
+            () => console.log('Good Morning....Its time to wakeup!'),5000);
+           
+        
+    </script>
+</body>
+</html>

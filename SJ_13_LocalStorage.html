@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    localStorage.setItem('Name','Sweta Jha');
+    localStorage.setItem('Favourite Dish','Aaloo Paratha');
+    // to check this -> developers tool-> go to applications-> storage -> local Storage
+    console.log(localStorage.getItem('Name'));
+
+    let product ={
+        name: 'T-Shirt',
+        price: 1500,
+        rating: {
+            stars: 4.5,
+            noOfReviews: 4000,
+        },
+    };
+    
+    // localStorage.setItem('product', product); // not get desired answer
+    localStorage.setItem('product', JSON.stringify(product));
+    console.log(localStorage.getItem('product'));
+
+    let product2 = JSON.parse(localStorage.getItem('product'));
+    console.log(product2);
+
+    // localStorage.removeItem('price');
+    // console.log(product2);
+    // localStorage.clear();
+    </script>
+</body>
+</html>

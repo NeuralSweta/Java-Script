@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // while loop
+        let num=1;
+        while(num<=10){
+            console.log(num);
+            num+=2;
+        }
+        console.log('final value of num is: '+num); //11
+
+        let x=0;
+        while(x<1){
+            console.log(x);
+            x=Math.random()*3;
+        }
+        console.log('final value of x is: '+x);
+
+        //do-while loop
+        let a=0; //initialization
+        do{
+            console.log(a);
+            a++;  //updation
+        }while(a<5); //condition
+
+        // for loop: initialization cond then update then cond
+        for(let b= 1; b<=10;b++){
+            console.log(b); 
+        }
+        let arr=[4,56,8,3,-87,9,78];
+        for(let index=0; index<arr.length;index++){
+            console.log(arr[index]);
+        }
+
+        //accumulator pattern
+        	Eg: let nums= [3,6,7,9,4];
+	       let sum=0;
+	       for(let i=0; i<nums.length; i++){
+	      sum+=nums[i];
+	}
+	console.log(`Sum of the array is  ${ sum}`);
+
+	let squareOfNums =[ ];
+	   for(let j=0;j<nums.length; j++){
+	      squareOfNums.push( nums[j] *nums[j]);
+	}
+	console.log(squareOfNums);
+
+    // continue
+    for(let k=1; k<=25; k++){
+        if(k%2==1){
+            continue;
+        }
+        console.log(k);
+    }
+
+    </script>
+</body>
+</html>

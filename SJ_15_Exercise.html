@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #my-button{
+            height: 50px;
+            width: 50px;
+            font-weight: bold;
+            font-size: large;
+            border: none;
+            border-radius: 5px;
+        }
+        .js-odd{
+            background-color: aqua;
+        }
+        .js-even{
+            background-color: rgb(242, 58, 120);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Q.1 Display good morning , afternoon and night based on current hour -->
+     <!-- Q.2 Add the name to output too -->
+     <h3 id="greeting"> </h3>
+     <!-- Q.3 Create a button which shows the number how many times it has been pressed
+      - also, it has different colors for when it has been pressed odd or even times
+      - The click count should also survive browser refresh -->
+      <button id="my-button" onclick="buttonPressed();">0</button>
+
+<script>
+    function doGreeting(personName='Dear'){
+    let date=new Date();
+    let hours= date.getHours();
+    console.log(hours);
+    let heading = document.querySelector('#greeting');
+    if(hours>5 && hours<12){
+        heading.innerText=`Good Morning ${personName}`;
+    }else if(hours>=12&& hours<=16){
+        heading.innerText=`Good Afternoon ${personName}`;
+    }else if(hours>16 && hours<=19){
+        heading.innerText=`Good Evening ${personName}`;
+    }else{
+        heading.innerText=`Good Night ${personName}`;
+    }
+}
+doGreeting('Sweta');
+
+
+
+//--------Q.3---------
+let noOfTimesClicked=localStorage.getItem('noOfTimesClicked')||0;
+function buttonPressed(){
+    noOfTimesClicked++;
+    localStorage.setItem('noOfTimesClicked',noOfTimesClicked);
+    updateButton();
+}
+function updateButton(){
+    let button = document.querySelector('#my-button');
+    if(noOfTimesClicked%2==0){
+        button.classList.remove('js-odd');
+        button.classList.add('js-even');
+    }else{
+        button.classList.remove('js-even');
+        button.classList.add('js-odd');
+    }
+    button.innerText= noOfTimesClicked;
+}
+updateButton();
+</script>
+</body>
+</html>

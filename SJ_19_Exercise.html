@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Q.1 Create an array of numbers [5,6]. Add 4 at the beginning and 7 at the end of the array
+
+        let arr =[5,6];
+        arr.unshift(4);
+        arr.push(7);
+        console.log(arr);
+        
+
+        // Q.2 Create a method to return an element at a particular position in the array
+        function getElementInArray(array, position){
+            return arr[position-1];
+        }
+        let array= [1,2,3,4,5,6,7,8,9];
+        console.log(getElementInArray(array,2));
+
+        // Q.3 Create an array copy using slice method
+        function arrCopy(nums){
+            return nums.slice(0,nums.length);
+        }
+        let nums=[4,5,6,7];
+        let num2=arrCopy(nums);
+        num2[0]=null;
+        console.log(nums);
+        console.log(num2);
+        //Q.4 Create a while loop that exits after counting 5 prime numbers
+        // Q.5 Modify the above to finish using break
+        let num1 = 2;
+        let i=0;
+        while(true){
+            if(isPrime(num1)){
+            console.log(num1);
+            i++;
+            if (i>=5) break;
+            }
+            num1++;
+        }
+            function isPrime(num1){
+                for(let i=2;i*i <num1;i++){
+                    if(num1%i==0){
+                        return false;
+                    }
+                }
+                return true;
+            }
+        
+        //Q.6 Create a for loop that prints numbers 1 to 10 in reverse order
+        for(let i=10; i>=1;i--){
+            console.log(i);
+        }
+        //Q.7 Using continue only print positive numbers from the given array [1, -6, 5,7 ,-98]
+        let arr2 = [1,-6,5,7,-98];
+        for(let i=0;i<arr2.length;i++){
+            if(arr2[i]<0){
+                continue;
+            }
+            console.log(arr2[i]);
+        }
+        // Q.8 Using accumulator pattern concatenate all the strings in the given array['JavaScript', 'coding', 'Learning','Accumulator', 'Concept']
+        let arr3=['JavaScript', 'coding', 'Learning','Accumulator', 'Concept'];
+        let sum='';
+        for(let i=0;i<arr3.length;i++){
+        sum+=arr3[i]+ ' ';
+        }
+        console.log(sum);
+        console.log(arr3.join(","));
+    </script>
+</body>
+</html>

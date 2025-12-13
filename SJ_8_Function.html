@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function</title>
+</head>
+<body>
+    <script>
+        let age =21;
+        function printAge(){
+            console.log(`Your age is ${age}`);
+        }
+        printAge();  //function call
+
+        age =76;
+        printAge();
+
+        age= 7;
+        printAge();
+
+
+        // function
+        function generateRandomMove(){
+            let random = Math.random();
+            let randomMove = random * 3;
+            return randomMove;
+        }
+        console.log(generateRandomMove());
+
+        //function
+        function determineIdentity(){
+            let age;
+            if(age== undefined){
+                return 'Aap Avatar hai';
+            }
+            console.log('Checking Identity');
+            let identity;
+            if(age> 18){
+                identity ='You are adult'
+            }else{
+                identity='You are child'
+            }
+            return identity;
+        }
+        console.log(determineIdentity());
+
+        // function with parameter
+
+        function sum(a,b){
+            let sum = a+b;
+            return sum;
+        }
+        console.log(sum(4,-5));
+
+        function greeting(name='Pyaare'){
+            console.log(`Namaste ${name}`);
+        }
+        greeting();  //Namaste Pyaare
+        greeting('Sweta'); // Namaste Sweta
+    </script>
+</body>
+</html>

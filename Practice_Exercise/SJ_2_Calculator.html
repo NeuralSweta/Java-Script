@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            margin: 40px;
+        }
+        .box{
+            border: 2px solid black;
+            padding: 12px;
+            background-color: rgba(0, 0, 0, 0.855);
+            border-radius: 10px;    
+            height:460px;
+            color: white;
+        }
+        
+       #Calculator{
+        border: 4px solid black;
+        padding: 20px;
+        border-radius: 6px;
+        border: 4px solid #000;
+       } 
+
+       #display{
+        margin: 8px auto;
+        width: 90%;
+        background-color: white;
+        padding: 12px;
+        display: block;
+        border-radius: 6px;
+        text-align: right;
+        margin-bottom: 12px;
+        font-weight: bold;
+        font-size: 20px;
+       }
+       .check-button{ 
+        
+        justify-content:space-between;
+        background-color: 
+        aquamarine;
+        padding: 6px 16px;
+        margin : 8px 4px;
+        border: none;
+        border-radius: 4px;
+        font-weight: bold;
+        cursor:pointer;
+       }
+       .grid{
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        grid-auto-rows: 50px;
+        gap: 8px;
+        padding: 10px 0;
+        border-radius: 2px solid black;
+        height: 250px;
+       }
+       button{
+        cursor: pointer;
+        border-radius: 4px;
+        padding: 14px;
+        font-size: 15px;
+       }
+       .side-button{
+        background-color: aliceblue;
+        border: 2px solid #7a7a7a;
+        font-weight: bold;
+        margin: 2px !important;
+        font-size: 14px;
+        height: 100% !important;
+        padding: 8px 4px !important;
+        gap: 2px !important;
+
+       }
+       .CE{
+        color: aqua;
+        background-color: black;
+       }
+       .num-button{
+        background-color: black;
+        color: azure;    
+    }
+    .on{ background-color: aqua;
+    }
+    .op-button{
+       background-color: #444;
+       color: white;
+    }
+    .plus-button{
+        grid-row: span 2;
+        height: 105px;
+        color: #00e5ff;
+        background-color: #1c1c1c;
+        font-size: 22px;
+        border: 2px solid black;
+    }
+    </style>
+</head>
+<body>
+    <div class="box">
+    <div id="Calculator"> <input type="text" id="display"></div>
+    
+    <button class="check-button">Check</button>
+    <button class="check-button">Compact</button>
+    <button style="visibility: hidden">.</button><br>
+    <div class="grid">
+    <button class="side-button" onclick="currentDisplay=grandTotal.toString();document.querySelector('#display').value=currentDisplay;">GT</button>
+    <button class="num-button" onclick="currentDisplay=currentDisplay+'7';document.querySelector('#display').value=currentDisplay;">7</button> 
+    <button class="num-button" onclick="currentDisplay=currentDisplay+'8';document.querySelector('#display').value=currentDisplay;">8</button>
+    <button class="num-button" onclick="currentDisplay=currentDisplay+'9';document.querySelector('#display').value=currentDisplay;">9</button>
+    <button class="op-button" onclick="currentDisplay=currentDisplay+'/';document.querySelector('#display').value=currentDisplay;">÷</button>
+    <button class="op-button">R</button>
+    <button class="on" onclick="currentDisplay='';document.querySelector('#display').value=currentDisplay;">AC</button>
+    
+    <button class="side-button">MU</button>
+    <button class="num-button" onclick="currentDisplay=currentDisplay+'4';document.querySelector('#display').value=currentDisplay;">4</button>
+    <button class="num-button"
+    onclick="currentDisplay=currentDisplay+'5';document.querySelector('#display').value=currentDisplay;">5</button>
+    <button class="num-button" onclick="currentDisplay=currentDisplay+'6';document.querySelector('#display').value=currentDisplay;">6</button>
+    <button class="op-button" onclick="currentDisplay=currentDisplay+'*';document.querySelector('#display').value=currentDisplay;" >×</button>
+    <button class="op-button" onclick="currentDisplay = (parseFloat(currentDisplay) / 100).toString(); document.querySelector('#display').value = currentDisplay;">%</button>
+    <button class="op-button" onclick="memory=0;">MC</button>
+    
+    <button class="side-button" onclick="if(currentDisplay.startsWith('-')) { currentDisplay = currentDisplay.slice(1); } else { currentDisplay = '-' + currentDisplay; } document.querySelector('#display').value = currentDisplay;">+/-</button> 
+    <button class="num-button" onclick="currentDisplay=currentDisplay+'1';document.querySelector('#display').value=currentDisplay;">1</button>
+    <button class="num-button" onclick="currentDisplay=currentDisplay+'2';document.querySelector('#display').value=currentDisplay;">2</button>
+    <button class="num-button" onclick="currentDisplay=currentDisplay+'3';document.querySelector('#display').value=currentDisplay;">3</button>
+    <button class="plus-button" onclick="currentDisplay=currentDisplay+'+';document.querySelector('#display').value=currentDisplay;">+</button>
+    <button class="op-button" onclick="currentDisplay=currentDisplay+'-';document.querySelector('#display').value=currentDisplay;">-</button>
+    <button class="op-button " onclick="memory -= parseFloat(currentDisplay) || 0;">M-</button>
+    <button class="side-button" onclick="currentDisplay = Math.sqrt(parseFloat(currentDisplay)).toString(); document.querySelector('#display').value = currentDisplay;">√x</button>
+    <button class="num-button" onclick="currentDisplay=currentDisplay+'0';document.querySelector('#display').value=currentDisplay;">0</button>
+    <button class="num-button" onclick="currentDisplay=currentDisplay+'00';document.querySelector('#display').value=currentDisplay;">00</button>
+    <button class="op-button" onclick="currentDisplay=currentDisplay+'.';document.querySelector('#display').value=currentDisplay;">.</button>
+    <button class="op-button" onclick="let result= eval(currentDisplay);currentDisplay= result;document.querySelector('#display').value=currentDisplay;">=</button>
+    <button class="op-button" onclick="memory += parseFloat(currentDisplay) || 0;">M+</button>
+    <button class="side-button" onclick="currentDisplay=currentDisplay.slice(0,-1);document.querySelector('#display').value=currentDisplay;" >CE</button>
+    
+    </div>
+    </div>
+  
+    <script>
+        let currentDisplay='';
+        document.querySelector('#display').value= currentDisplay || '0';
+    </script>
+</body>
+</html>

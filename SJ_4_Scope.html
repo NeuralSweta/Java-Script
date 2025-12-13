@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scope </title>
+</head>
+<body>
+    <script>
+        let age= 4;
+        let schoolNorms;
+        if(age>3 && age<=5){
+       schoolNorms='Child can get admission in pre-nursery'
+        }else if(age>5){
+             schoolNorms='Child can get admission'
+        }else{
+            schoolNorms='Child cannot get admission'
+        }
+        console.log(schoolNorms);
+
+    //    //-------------
+    //     let age= 4;
+    //     var schoolNorms;
+    //     if(age>3 && age<=5){
+    //    var schoolNorms='Child can get admission in pre-nursery'
+    //  console.log(schoolNorms);
+    //     }else if(age>5){
+    //     var  schoolNorms='Child can get admission'
+    //     }else{
+    //         schoolNorms='Child cannot get admission'
+    //     }
+    //     console.log(schoolNorms);
+
+    //2 outputs here as var used if let used than it will show undefined error
+    </script>
+</body>
+</html>
