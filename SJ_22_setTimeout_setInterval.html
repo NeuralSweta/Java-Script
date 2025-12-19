@@ -7,16 +7,21 @@
 <body>
     <script>
         let alarm = function(){
-            console.log('Subah ho gyi mamu....wakeup!...wakeup!')
+            console.log(`Subah ho gyi mamu....wakeup!...wakeup! ${new Date()}`);
         }
-        setTimeout(alarm,2000); //pass alarm argument and call
+        setTimeout(alarm,2000); //pass alarm argument not call
         console.log('Alarm is set');
 
 
         //--can be written as----
         setTimeout(
             () => console.log('Good Morning....Its time to wakeup!'),5000);
+           //---------------
+             let timerId = setTimeout(alarm,1000);
+            clearTimeout(timerId);
            
+            let intervalId=setInterval(alarm, 1000);
+            setTimeout(()=>clearInterval(intervalId),5000);
         
     </script>
 </body>

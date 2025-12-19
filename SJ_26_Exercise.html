@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .btn-subscribe{
+        background-color: rgb(246, 42, 42);
+        font-size: 15px;
+        height: 20px;
+        width: 80px;
+        border: none;
+        color: white;
+        border-radius: 4px;
+    }
+    .js-size-double{
+        height: 40px;
+        width:160px;
+        font-size: 30px;
+
+    }
+    </style>
+</head>
+<body>
+    <!-- <button class="btn-subscribe" onclick="setTimeout(doubleTheSize,2000);">Subscribe</button> -->
+     <button class="btn-subscribe">Subscribe</button>
+    <script>
+        //Q.1 Create a variable multiply and assign a function to this variable that multiplies 2 numbers call this method from the variable
+        let multiply = (num1,num2) => num1*num2;
+        console.log(multipy);
+        
+        //Q.2 Create a function runTwice that takes a function as a parameter and then runs that method twice
+        let printGreeting=()=> console.log('Namaste');
+        let runTwice = inputFunction=>{
+            inputFunction();
+            inputFunction();
+        };
+        runTwice(printGreeting);
+       //Q.3 Create a button which should grow double in size on clicking after 2 seconds
+
+       function doubleTheSize(){
+        let buttonElement= document.querySelector('.btn-subscribe')
+        buttonElement.classList.add('js-size-double');
+       }
+
+        //Q.4 In the above exercise add the behaviour using an event listener instead of onclick
+         let buttonElement = document.querySelector('.btn-subscribe');
+        buttonElement.addEventListener('click',()=>{
+            setTimeout(doubleTheSize,2000);
+        });
+        //Q.5 Create a function that sums an array of numbers. Do this using a for-each loop
+        let arr=[1,2,3,4,5,6,7,8,9];
+        let sum=0;
+        arr.forEach(num => sum+=num);
+        console.log(sum);
+
+        //Q.6 Create a function that takes an array of numbers and return their squares using map function. 
+        let squares = arr.map(num=> num*num);
+        console.log(squares);
+    </script>
+</body>
+</html>

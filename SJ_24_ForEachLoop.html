@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr1=[3,5,7,9];
+        for(let i=0; i<arr1.length;i++){
+            console.log(arr1[i]);
+        }
+//----forEach loop----
+   let arr2=[1,2,3,4,5];
+        arr2.forEach((num)=>
+            console.log(num));
+
+            function search(arr2,num){
+                for(let i=0;i<arr2.length;i++){
+                    if(arr2[i]===num){
+                        console.log(`element found at: ${i}`);
+                        return;
+                    }
+                }    
+                console.log('element not found');
+            }
+            search(arr2,3);
+
+            // this cannot be done by for-each loop as early return will be treated as continue (skip the iteration)
+            let array =[1,2,3,4,5,6,7,8,9];
+            arr.forEach(num =>{
+                if(num===5){
+                    return;
+                }
+                console.log(`visited: ${num}`);
+            });
+    </script>
+</body>
+</html>
